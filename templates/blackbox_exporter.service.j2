@@ -1,0 +1,17 @@
+{{ ansible_managed | comment }}
+[Unit]
+Description=Prometheus Blackbox Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User={{ blackbox_exporter_user }}
+Group={{ blackbox_exporter_group }}
+Restart=always
+RestartSec=2
+StartLimitInterval=0
+Type=simple
+ExecStart=/usr/local/bin/blackbox_exporter --config.file {{ blackbox_config_dir }}/blackbox.yml
+
+[Install]
+WantedBy=multi-user.target

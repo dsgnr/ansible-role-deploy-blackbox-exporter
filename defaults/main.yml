@@ -1,0 +1,5 @@
+---
+blackbox_exporter_release_version: latest
+blackbox_exporter_user: blackbox_exporter
+blackbox_exporter_group: blackbox_exporter
+blackbox_config_dir: /data/blackbox_exporter
